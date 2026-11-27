@@ -20,6 +20,8 @@ def multiply(a, b):
 
 def divide(a, b):
     """Return a divided by b."""
+    if b == 0:
+        return "Error: cannot divide by zero"
     return a / b
 
 

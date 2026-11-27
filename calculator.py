@@ -21,7 +21,7 @@ def multiply(a, b):
 def divide(a, b):
     """Return a divided by b."""
     if b == 0:
-        return "Error: cannot divide by zero"
+        raise ZeroDivisionError("Cannot divide by zero")
     return a / b
 
 
@@ -46,7 +46,11 @@ def main(argv):
         print("Example: python calculator.py 8 / 2")
         return 1
     a, op, b = float(argv[1]), argv[2], float(argv[3])
-    print(calculate(a, op, b))
+    try:
+        print(calculate(a, op, b))
+    except (ZeroDivisionError, ValueError) as error:
+        print(f"Error: {error}")
+        return 1
     return 0
 
 

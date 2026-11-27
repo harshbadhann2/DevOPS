@@ -25,3 +25,10 @@ python -m unittest -v
 | `main` | Stable code |
 | `feature/friendly-error` | Returns a readable message when dividing by zero |
 | `feature/strict-error` | Raises an exception when dividing by zero |
+
+## Merge conflict record
+
+`feature/friendly-error` and `feature/strict-error` both changed the zero check in
+`divide()`. The first branch merged cleanly into `main`; the second produced a
+conflict, which was resolved by keeping the exception in `divide()` and printing a
+readable message from `main()`.
